@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Space Portfolio 🚀</title>
+    <title>Madhav Pandya | Portfolio</title>
 
-    <!-- Futuristic Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="stars"></canvas> <!-- Animated star background -->
+    <canvas id="stars"></canvas>
 
     <header>
-        <h1 class="glow-text">🚀 Madhav Pandya</h1>
-        <p class="typing-text">Futuristic Web Developer & Cybersecurity Enthusiast</p>
+        <h1 class="name">Madhav Pandya</h1>
+        <p class="typing-text" id="subtitle"></p>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I build immersive digital experiences with futuristic space themes. Skilled in Web Development, Cybersecurity, AI, and more.</p>
+        <p>
+            I am a cybersecurity enthusiast and software developer with a focus on building secure, efficient systems.  
+            My interests include penetration testing, vulnerability research, and developing solutions that are both robust and user-friendly.
+        </p>
     </section>
 
     <section id="skills">
@@ -31,26 +35,33 @@
             <li onclick="showSkill('python')">Python Programming</li>
             <li onclick="showSkill('ai')">AI & Machine Learning</li>
         </ul>
-
         <div id="skill-details"></div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>A futuristic GitHub portfolio site with space theme.</p>
-            <a href="https://github.com/yourusername/yourrepo" target="_blank">View Code</a>
+            <p>No public projects yet, but I am actively building and exploring new challenges.</p>
         </div>
+    </section>
+
+    <section id="fun">
+        <h2>Quote of the Moment</h2>
+        <div id="quote">Loading...</div>
+        <button onclick="fetchQuote()">New Quote</button>
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+        <p>Email: <a href="mailto:iammadhavpandya@gmail.com">iammadhavpandya@gmail.com</a></p>
+        <p>GitHub: <a href="https://madhav-pandya-git.github.io/Portfolio/" target="_blank">https://madhav-pandya-git.github.io/Portfolio/</a></p>
     </section>
 
+    <footer>
+        <p>&copy; 2025 Madhav Pandya</p>
+    </footer>
+
     <script src="script.js"></script>
-    <script src="stars.js"></script> <!-- Star background animation -->
+    <script src="stars.js"></script>
 </body>
 </html>
