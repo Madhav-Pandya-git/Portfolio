@@ -1,19 +1,106 @@
-#skill-details {
+body {
     font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(#000000, #0a0a0a);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.glow-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 5px #00ffff,
+            0 0 10px #00ffff,
+            0 0 20px #00ffff;
+    }
+    to {
+        text-shadow:
+            0 0 10px #00ffff,
+            0 0 20px #00ffff,
+            0 0 40px #00ffff,
+            0 0 80px #00ffff;
+    }
+}
+
+.typing-text {
+    font-size: 20px;
+    color: #88ffff;
+    animation: typing 4s steps(30) 1 normal both, blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #00ffff;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#skills ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#skills ul li:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+#skill-details {
     font-size: 18px;
-    color: #0ff;
-    background: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-    transition: all 0.3s ease-in-out;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
+.project-card {
+    background: rgba(0, 0, 0, 0.7);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
