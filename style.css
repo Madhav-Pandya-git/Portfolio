@@ -1,4 +1,4 @@
-/* Reset & base */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -35,6 +35,12 @@ body {
   color: #00ffe7;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.2rem;
+  transition: opacity 1s ease;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .loader-svg {
@@ -367,11 +373,4 @@ body {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-}
-
-.project-card {
-  background
+  display
