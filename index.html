@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madhav Pandya | Cybersecurity & Coding</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhav Pandya | Cybersecurity & AI Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
-    <header>
-        <h1 id="name">Madhav Pandya</h1>
-        <p id="tagline">Cybersecurity Enthusiast & Software Developer</p>
-    </header>
-
+<div id="loader" class="loader">Loading...</div>
+<div id="main-content" class="hidden">
+    <nav class="navbar">
+        <div class="logo">Madhav Pandya</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <canvas id="space-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Welcome to My High-Tech Portfolio</h1>
+            <p>Cybersecurity | Python | AI & ML | Cloud Computing</p>
+        </div>
+    </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>I specialize in building secure systems and writing clean, efficient code.</p>
+        <p>I am Madhav Pandya, passionate about cybersecurity, Python programming, artificial intelligence & machine learning, and cloud computing. My work blends creativity and technical depth to build secure, intelligent systems.</p>
     </section>
-
     <section id="skills">
         <h2>Skills</h2>
-        <div class="skill-card" id="web-dev">Web Development</div>
-        <div class="skill-card" id="cybersec">Cybersecurity</div>
-        <div class="skill-card" id="python">Python Programming</div>
-        <div class="skill-card" id="ai">AI & Machine Learning</div>
+        <div class="skill-bar"><span>Cybersecurity</span><div class="bar"><div style="width:90%"></div></div></div>
+        <div class="skill-bar"><span>Python</span><div class="bar"><div style="width:85%"></div></div></div>
+        <div class="skill-bar"><span>AI & ML</span><div class="bar"><div style="width:80%"></div></div></div>
+        <div class="skill-bar"><span>Cloud Computing</span><div class="bar"><div style="width:75%"></div></div></div>
     </section>
-
     <section id="projects">
         <h2>Projects</h2>
-        <p>Coming soon...</p>
+        <div class="projects-container">
+            <div class="project-card"><h3>Cybersecurity Toolkit</h3><p>A toolkit for penetration testing and vulnerability analysis.</p></div>
+            <div class="project-card"><h3>AI Chatbot</h3><p>An intelligent conversational AI built with Python & ML.</p></div>
+            <div class="project-card"><h3>Cloud Automation</h3><p>Automating cloud infrastructure using Python scripts.</p></div>
+        </div>
     </section>
-
     <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact Me</h2>
         <p>Email: <a href="mailto:iammadhavpandya@gmail.com">iammadhavpandya@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/madhav-pandya">github.com/madhav-pandya</a></p>
+        <p>GitHub: <a href="https://github.com/iammadhavpandya" target="_blank">github.com/iammadhavpandya</a></p>
     </section>
-
-    <footer>
-        <p>&copy; 2025 Madhav Pandya</p>
-    </footer>
-
-    <script src="script.js"></script>
+</div>
+<script src="scripts.js"></script>
 </body>
 </html>
