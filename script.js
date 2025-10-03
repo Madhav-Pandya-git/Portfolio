@@ -1,14 +1,16 @@
-// Typing effect for tagline
-const tagline = "Cybersecurity Enthusiast & Software Developer";
-let i = 0;
-const taglineElement = document.getElementById("tagline");
+window.addEventListener('load', () => {
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('main-content').classList.remove('hidden');
+    initParticles();
+});
 
-function typeWriter() {
-    if (i < tagline.length) {
-        taglineElement.innerHTML += tagline.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-    }
+function initParticles(){
+    particlesJS('hero', {
+        particles: {
+            number: { value: 100 },
+            size: { value: 3 },
+            move: { speed: 1 },
+            line_linked: { enable: true, distance: 150, color: '#0ff', opacity: 0.5 }
+        }
+    });
 }
-
-window.onload = typeWriter;
