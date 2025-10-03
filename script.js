@@ -1,49 +1,31 @@
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
+function showSkill(skill) {
+    const details = {
+        web: "Web Development: HTML, CSS, JavaScript, React, TailwindCSS, Responsive Design.",
+        cyber: "Cybersecurity: Ethical hacking, penetration testing, vulnerability assessment.",
+        python: "Python Programming: Data analysis, automation, scripting, AI development.",
+        ai: "AI & ML: Machine learning models, neural networks, data science projects."
+    };
 
-let width, height;
-function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-}
-window.addEventListener("resize", resize);
-resize();
-
-let stars = [];
-for (let i = 0; i < 300; i++) {
-    stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        z: Math.random() * width,
-    });
+    let container = document.getElementById("skill-details");
+    container.innerHTML = `<p>${details[skill]}</p>`;
 }
 
-function animate() {
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.fillStyle = "white";
-    for (let i = 0; i < stars.length; i++) {
-        let star = stars[i];
-        star.z -= 2;
-        if (star.z <= 0) {
-            star.z = width;
-            star.x = Math.random() * width;
-            star.y = Math.random() * height;
-        }
-        let k = 128.0 / star.z;
-        let px = star.x * k + width / 2;
-        let py = star.y * k + height / 2;
-
-        if (px >= 0 && px <= width && py >= 0 && py <= height) {
-            let size = (1 - star.z / width) * 3;
-            ctx.beginPath();
-            ctx.arc(px, py, size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+// Typing animation for subtitle
+let subtitle = "Building secure systems. Writing clean code. Exploring innovation.";
+let i = 0;
+function typeWriter() {
+    if (i < subtitle.length) {
+        document.getElementById("subtitle").innerHTML += subtitle.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
     }
-    requestAnimationFrame(animate);
 }
-animate();
+typeWriter();
+
+// Quote API
+async function fetchQuote() {
+    let response = await fetch("https://api.quotable.io/random");
+    let data = await response.json();
+    document.getElementById("quote").innerText = `"${data.content}" — ${data.author}`;
+}
+fetchQuote();
