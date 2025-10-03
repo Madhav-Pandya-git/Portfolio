@@ -1,15 +1,19 @@
-.neon-button {
-  color: #fff;
-  background: transparent;
-  border: 2px solid #0ff;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: 0.3s ease;
-  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+#skill-details {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #0ff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    transition: all 0.3s ease-in-out;
 }
 
-.neon-button:hover {
-  box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
