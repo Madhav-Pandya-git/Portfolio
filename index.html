@@ -1,18 +1,48 @@
-<div class="typing-container">
-  <span id="typed-text"></span><span class="cursor">|</span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To My Portfolio!! 🚀</title>
 
-<script>
-let text = "Hi, I am Madhav Pandya, a futuristic developer and cybersecurity enthusiast.";
-let i = 0;
-let speed = 50;
+    <!-- Futuristic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("typed-text").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-typeWriter();
-</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="stars"></div>
+
+    <header>
+        <h1 class="glow-text">🚀 Madhav Pandya</h1>
+        <p class="typing-text">Futuristic Web Developer & Cybersecurity Enthusiast</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I build immersive digital experiences with futuristic space themes. Skilled in Web Development, Cybersecurity, AI, and more.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li onclick="showSkill('web')">Web Development</li>
+            <li onclick="showSkill('cyber')">Cybersecurity</li>
+            <li onclick="showSkill('python')">Python Programming</li>
+            <li onclick="showSkill('ai')">AI & Machine Learning</li>
+        </ul>
+
+        <div id="skill-details"></div>
+    </section>
+
+
+
+   <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
