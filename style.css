@@ -1,18 +1,9 @@
 body {
     margin: 0;
-    font-family: 'Roboto Mono', monospace;
-    background: black;
-    color: #f0f0f0;
-    overflow-x: hidden;
-}
-
-canvas#stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
 header {
@@ -20,77 +11,48 @@ header {
     padding: 50px 20px;
 }
 
-.name {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 50px;
+#name {
+    font-size: 3rem;
     color: #00bcd4;
-    text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
 }
 
-.typing-text {
-    font-size: 20px;
-    color: #ffffff;
-    border-right: 3px solid #00bcd4;
-    white-space: nowrap;
-    overflow: hidden;
+#tagline {
+    font-size: 1.5rem;
+    color: #8e8e8e;
 }
 
 section {
-    max-width: 900px;
-    margin: auto;
     padding: 20px;
+    margin: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
 }
 
 h2 {
     color: #00bcd4;
-    border-bottom: 2px solid #00bcd4;
-    padding-bottom: 5px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
+.skill-card {
     display: inline-block;
     margin: 10px;
-    padding: 8px 20px;
-    border: 2px solid #00bcd4;
+    padding: 15px;
+    background-color: #333;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
-ul li:hover {
-    background: rgba(0, 188, 212, 0.2);
+.skill-card:hover {
+    transform: scale(1.1);
+    background-color: #00bcd4;
+    color: #fff;
 }
 
-.project-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00bcd4;
-}
-
-button {
-    background: #00bcd4;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: #0097a7;
-}
-
-#quote {
-    margin-top: 10px;
-    font-style: italic;
-    font-size: 18px;
+footer {
+    text-align: center;
     padding: 10px;
-    border-left: 4px solid #00bcd4;
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-
