@@ -1,32 +1,49 @@
-function showSkill(skill) {
-    let details = {
-        web: "🌐 <strong>Web Development:</strong> HTML, CSS, JavaScript, React, TailwindCSS, Responsive Design.",
-        cyber: "🛡️ <strong>Cybersecurity:</strong> Ethical hacking, penetration testing, vulnerability assessment.",
-        python: "🐍 <strong>Python Programming:</strong> Data analysis, automation, scripting, AI development.",
-        ai: "🤖 <strong>AI & ML:</strong> Machine learning models, neural networks, data science projects."
-    };
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
 
-    let container = document.getElementById("skill-details");
+let width, height;
+function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+}
+window.addEventListener("resize", resize);
+resize();
 
-    // Reset content and add animation
-    container.innerHTML = "";
-    container.classList.remove("fade-in");
-    void container.offsetWidth; // trigger reflow
-    container.classList.add("fade-in");
+let stars = [];
+for (let i = 0; i < 300; i++) {
+    stars.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        z: Math.random() * width,
+    });
+}
 
-    // Typing effect
-    let text = details[skill];
-    container.innerHTML = ""; // reset
+function animate() {
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, width, height);
 
-    let i = 0;
-    let speed = 30;
+    ctx.fillStyle = "white";
+    for (let i = 0; i < stars.length; i++) {
+        let star = stars[i];
+        star.z -= 2;
+        if (star.z <= 0) {
+            star.z = width;
+            star.x = Math.random() * width;
+            star.y = Math.random() * height;
+        }
+        let k = 128.0 / star.z;
+        let px = star.x * k + width / 2;
+        let py = star.y * k + height / 2;
 
-    function typeWriter() {
-        if (i < text.length) {
-            container.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+        if (px >= 0 && px <= width && py >= 0 && py <= height) {
+            let size = (1 - star.z / width) * 3;
+            ctx.beginPath();
+            ctx.arc(px, py, size, 0, Math.PI * 2);
+            ctx.fill();
         }
     }
-    typeWriter();
+    requestAnimationFrame(animate);
 }
+animate();
