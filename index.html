@@ -1,155 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Madhav Pandya | Cybersecurity & AI Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script defer src="scripts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.T.U.D.E.N.T // Cyber & Code Portfolio</title>
+    <!-- Load Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to the external custom stylesheet -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
-<body>
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <div class="loader">
-      <svg class="loader-svg" viewBox="0 0 50 50">
-        <circle class="loader-circle" cx="25" cy="25" r="20" fill="none" stroke-width="5" />
-      </svg>
-      <p>Loading...</p>
-    </div>
-  </div>
 
-  <!-- Cosmic Background -->
-  <div id="vanta-bg"></div>
+<body class="min-h-screen">
+    
+    <!-- Navigation (Fixed to the top) -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold neon-text font-mono">S.T.U.D.E.N.T.</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#skills" class="hover:text-green-400 transition duration-300">Skills</a>
+                <a href="#projects" class="hover:text-green-400 transition duration-300">Projects</a>
+                <a href="#contact" class="hover:text-green-400 transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-800 focus:outline-none">
+                <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-2 space-y-2">
+            <a href="#skills" class="block py-2 px-3 rounded-md text-base font-medium hover:bg-gray-800 transition duration-300">Skills</a>
+            <a href="#projects" class="block py-2 px-3 rounded-md text-base font-medium hover:bg-gray-800 transition duration-300">Projects</a>
+            <a href="#contact" class="block py-2 px-3 rounded-md text-base font-medium hover:bg-gray-800 transition duration-300">Contact</a>
+        </div>
+    </header>
 
-  <!-- Navigation Bar -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo" aria-label="Madhav Pandya Portfolio">
-        <img src="https://img.icons8.com/ios-filled/50/00ffea/rocket.png" alt="Rocket Icon" class="nav-icon" />
-        <span>Madhav Pandya</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About Me</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <button id="nav-toggle" aria-label="Toggle navigation menu">
-        <span class="hamburger"></span>
-      </button>
-    </div>
-  </nav>
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="section hero-section">
-      <div class="hero-content">
-        <h1 class="neon-text">Madhav Pandya</h1>
-        <p class="subtitle neon-glow">Cybersecurity | Python | AI & ML | Cloud Computing</p>
-        <a href="#about" class="btn neon-btn">Explore My World</a>
-      </div>
-    </section>
+        <!-- 1. Hero Section -->
+        <section id="home" class="min-h-[80vh] flex items-center justify-center text-center">
+            <div class="space-y-6 max-w-4xl">
+                <p class="text-lg md:text-xl text-green-400 font-mono tracking-wider">&gt; Initializing Portfolio...</p>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-tight">
+                    <span class="block text-gray-200">Hello, I'm [Madhav Pandya]</span>
+                    <span class="block neon-text mt-2 font-mono" id="typing-text"></span>
+                    <span class="typing-cursor" id="cursor"></span>
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto pt-4">
+                    Leveraging **Cybersecurity** defenses, scalable **Cloud** infrastructure, and efficient **Code** to build the future of **Networking**.
+                </p>
+                <a href="#projects" class="inline-block mt-8 px-8 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-600 shadow-lg shadow-green-700/50 transition duration-300 transform hover:scale-105">
+                    View System Artifacts (Projects)
+                </a>
+            </div>
+        </section>
 
-    <!-- About Me -->
-    <section id="about" class="section about-section">
-      <h2 class="section-title neon-text">About Me</h2>
-      <div class="about-content">
-        <img src="https://img.icons8.com/ios-filled/100/00ffea/robot-2.png" alt="Cybersecurity Anime Icon" class="about-icon" />
-        <p>
-          I am Madhav Pandya, a passionate cybersecurity expert and developer specializing in Python programming, artificial intelligence, machine learning, and cloud computing. I blend futuristic technology with creative problem-solving to build secure, intelligent, and scalable solutions. My expertise spans penetration testing, AI model development, and cloud infrastructure management, all driven by a love for innovation and anime-inspired aesthetics.
-        </p>
-      </div>
-    </section>
+        <!-- 2. Core Expertise / Skills Section -->
+        <div class="h-px bg-gray-800 my-16"></div>
 
-    <!-- Skills -->
-    <section id="skills" class="section skills-section">
-      <h2 class="section-title neon-text">Skills</h2>
-      <div class="skills-container">
-        <div class="skill-chart" data-skill="Cybersecurity" data-percent="90">
-          <canvas></canvas>
-          <p>Cybersecurity</p>
-        </div>
-        <div class="skill-chart" data-skill="Python" data-percent="95">
-          <canvas></canvas>
-          <p>Python</p>
-        </div>
-        <div class="skill-chart" data-skill="AI & ML" data-percent="85">
-          <canvas></canvas>
-          <p>AI & ML</p>
-        </div>
-        <div class="skill-chart" data-skill="Cloud Computing" data-percent="80">
-          <canvas></canvas>
-          <p>Cloud Computing</p>
-        </div>
-      </div>
-    </section>
+        <section id="skills" class="py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 neon-text">CORE EXPERTISE // FOCUS AREAS</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Skill Card 1: Cybersecurity -->
+                <div class="p-6 rounded-xl terminal-box bg-gray-800/50">
+                    <div class="neon-text mb-4">
+                        <!-- Shield Icon (Security) -->
+                        <svg class="icon-svg w-10 h-10" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Cybersecurity</h3>
+                    <p class="text-gray-400 text-sm">
+                        Threat analysis, penetration testing (Kali Linux), SIEM monitoring, ethical hacking principles, and defensive network architecture (Firewalls, IDS/IPS).
+                    </p>
+                </div>
 
-    <!-- Projects -->
-    <section id="projects" class="section projects-section">
-      <h2 class="section-title neon-text">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <img src="https://img.icons8.com/ios-filled/50/00ffea/hacker.png" alt="Cybersecurity Project Icon" class="project-icon" />
-            <h3>SecureNet</h3>
-          </div>
-          <p>A penetration testing toolkit with AI-driven vulnerability detection and reporting.</p>
-          <a href="https://github.com/iammadhavpandya/securenet" target="_blank" rel="noopener" class="btn neon-btn">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <img src="https://img.icons8.com/ios-filled/50/00ffea/python.png" alt="Python Project Icon" class="project-icon" />
-            <h3>PyAI-ML</h3>
-          </div>
-          <p>Python library for building and deploying machine learning models with cloud integration.</p>
-          <a href="https://github.com/iammadhavpandya/pyai-ml" target="_blank" rel="noopener" class="btn neon-btn">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <img src="https://img.icons8.com/ios-filled/50/00ffea/cloud.png" alt="Cloud Project Icon" class="project-icon" />
-            <h3>CloudGuard</h3>
-          </div>
-          <p>Cloud security monitoring platform with real-time threat analytics and automated alerts.</p>
-          <a href="https://github.com/iammadhavpandya/cloudguard" target="_blank" rel="noopener" class="btn neon-btn">View on GitHub</a>
-        </div>
-      </div>
-    </section>
+                <!-- Skill Card 2: Coding/Development -->
+                <div class="p-6 rounded-xl terminal-box bg-gray-800/50">
+                    <div class="neon-text mb-4">
+                        <!-- Code Icon (Development) -->
+                        <svg class="icon-svg w-10 h-10" viewBox="0 0 24 24"><path d="m16 2 4 4"/><path d="M14.5 14.5l-2 2-2-2"/><path d="M5 22l7-7 7 7"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Coding & Scripting</h3>
+                    <p class="text-gray-400 text-sm">
+                        Python for automation (network scripts, security scans), Bash/PowerShell for system administration, and web development (HTML, CSS, JavaScript).
+                    </p>
+                </div>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact-section">
-      <h2 class="section-title neon-text">Contact Me</h2>
-      <div class="contact-container">
-        <form id="contact-form" autocomplete="off" novalidate>
-          <div class="form-group">
-            <label for="name" class="neon-text">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <label for="email" class="neon-text">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <label for="message" class="neon-text">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn neon-btn">Send Message</button>
-        </form>
-        <div class="contact-info">
-          <h3 class="neon-text">Get in Touch</h3>
-          <p>Email: <a href="mailto:iammadhavpandya@gmail.com" class="neon-link">iammadhavpandya@gmail.com</a></p>
-          <p>GitHub: <a href="https://github.com/iammadhavpandya" target="_blank" rel="noopener" class="neon-link">github.com/iammadhavpandya</a></p>
-          <img src="https://img.icons8.com/ios-filled/100/00ffea/space-invader.png" alt="Anime Space Icon" class="contact-icon" />
-        </div>
-      </div>
-    </section>
-  </main>
+                <!-- Skill Card 3: Networking -->
+                <div class="p-6 rounded-xl terminal-box bg-gray-800/50">
+                    <div class="neon-text mb-4">
+                        <!-- Router/Network Icon -->
+                        <svg class="icon-svg w-10 h-10" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="12" x2="12" y1="17" y2="19"/><line x1="12" x2="12" y1="5" y2="7"/><line x1="17" x2="19" y1="12" y2="12"/><line x1="5" x2="7" y1="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Networking (OSI/TCP)</h3>
+                    <p class="text-gray-400 text-sm">
+                        Deep understanding of TCP/IP, subnetting, routing protocols (OSPF, EIGRP), virtualization (VMware/Hyper-V), and network troubleshooting.
+                    </p>
+                </div>
+                
+                <!-- Skill Card 4: Cloud Computing -->
+                <div class="p-6 rounded-xl terminal-box bg-gray-800/50">
+                    <div class="neon-text mb-4">
+                        <!-- Cloud Icon -->
+                        <svg class="icon-svg w-10 h-10" viewBox="0 0 24 24"><path d="M17.5 18a2.5 2.5 0 0 0 0-5H20c2.2 0 4-1.8 4-4a4 4 0 0 0-4-4c-1.6 0-3.1.6-4.2 1.7A8 8 0 0 0 2 15c0 4.4 3.6 8 8 8h6.5a2.5 2.5 0 0 0 1 0z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Cloud Computing (AWS/GCP)</h3>
+                    <p class="text-gray-400 text-sm">
+                        Experience with IaaS/PaaS, deployment of secure compute instances, managing storage (S3/Cloud Storage), and containerization using Docker and Kubernetes.
+                    </p>
+                </div>
 
-  <footer>
-    <p>© 2024 Madhav Pandya | Designed with ❤️ </p>
-  </footer>
+            </div>
+        </section>
+
+        <!-- 3. Projects Section -->
+        <div class="h-px bg-gray-800 my-16"></div>
+
+        <section id="projects" class="py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 neon-text">PROJECTS // EVIDENCE OF WORK</h2>
+            <p class="text-center text-gray-400 mb-8">Click on a project to see the repository and documentation.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Cybersecurity Focus -->
+                <a href="[LINK_TO_GITHUB_PROJECT_1]" target="_blank" class="block p-6 rounded-xl terminal-box bg-gray-800/50 hover:bg-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-2 text-white flex items-center">
+                        Automated Reconnaissance Script
+                        <svg class="icon-svg w-5 h-5 ml-2 text-green-400" viewBox="0 0 24 24"><path d="M7 17l9-9M17 7l-1 5 1 5-5 1 5 1"/></svg>
+                    </h3>
+                    <p class="text-sm text-green-400 font-mono mb-3">#Cybersecurity #Python</p>
+                    <p class="text-gray-400">A Python-based tool that performs passive and active scans, including subdomain enumeration and open port discovery. (View on GitHub)</p>
+                </a>
+
+                <!-- Project 2: Cloud/Networking Focus -->
+                <a href="[LINK_TO_GITHUB_PROJECT_2]" target="_blank" class="block p-6 rounded-xl terminal-box bg-gray-800/50 hover:bg-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-2 text-white flex items-center">
+                        Serverless API Deployment
+                        <svg class="icon-svg w-5 h-5 ml-2 text-green-400" viewBox="0 0 24 24"><path d="M12 2v20M5 12h14M2 12c.7-5 4-8 10-8s9.3 3 10 8"/></svg>
+                    </h3>
+                    <p class="text-sm text-green-400 font-mono mb-3">#CloudComputing #Networking</p>
+                    <p class="text-gray-400">Deployed a secure REST API using AWS Lambda, API Gateway, and managed network access using VPCs and Security Groups. (View on GitHub)</p>
+                </a>
+
+                <!-- Project 3: Coding/Development Focus -->
+                <a href="[LINK_TO_GITHUB_PROJECT_3]" target="_blank" class="block p-6 rounded-xl terminal-box bg-gray-800/50 hover:bg-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-2 text-white flex items-center">
+                        Interactive Data Visualizer
+                        <svg class="icon-svg w-5 h-5 ml-2 text-green-400" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    </h3>
+                    <p class="text-sm text-green-400 font-mono mb-3">#Coding #JavaScript</p>
+                    <p class="text-gray-400">A frontend application built with HTML/JS to visualize network traffic logs or system performance data. (View on GitHub)</p>
+                </a>
+
+                <!-- Project 4: Extra Slot (Expand as needed) -->
+                <a href="[LINK_TO_GITHUB_PROJECT_4]" target="_blank" class="block p-6 rounded-xl terminal-box bg-gray-800/50 hover:bg-gray-700/50">
+                    <h3 class="text-2xl font-semibold mb-2 text-white flex items-center">
+                        [Project Title 4]
+                        <svg class="icon-svg w-5 h-5 ml-2 text-green-400" viewBox="0 0 24 24"><path d="M15 15l6-6M9 9l-6 6M17 19l4 4M3 5l4-4M12 3v18"/></svg>
+                    </h3>
+                    <p class="text-sm text-green-400 font-mono mb-3">#[Tag1] #[Tag2]</p>
+                    <p class="text-gray-400">Brief, compelling description of your next big project here. Keep it short and impactful. (View on GitHub)</p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 4. Contact/Footer Section -->
+        <div class="h-px bg-gray-800 my-16"></div>
+
+        <section id="contact" class="py-16 text-center">
+            <h2 class="text-4xl font-bold mb-6 neon-text">CONNECT // SYSTEM ACCESS GRANTED</h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Ready to collaborate on a new defense strategy or a challenging code deployment?
+            </p>
+            
+            <div class="flex justify-center space-x-6">
+                <!-- GitHub Link -->
+                <a href="[YOUR_GITHUB_URL]" target="_blank" class="flex items-center space-x-2 px-6 py-3 rounded-lg bg-gray-700 hover:bg-gray-600 transition duration-300">
+                    <!-- Placeholder GitHub Icon (Replace with actual SVG if preferred) -->
+                    <svg class="icon-svg w-6 h-6 text-white" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.4 5.4 0 0 0-1.5-3.75 5.07 5.07 0 0 0-.14-3.53s-1.25-.33-4.13 1.35a12.18 12.18 0 0 0-6.2 0c-2.88-1.68-4.13-1.35-4.13-1.35a5.07 5.07 0 0 0-.14 3.53 5.4 5.4 0 0 0-1.5 3.75c0 5.46 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <span class="text-white font-semibold">GitHub</span>
+                </a>
+
+                <!-- LinkedIn Link -->
+                <a href="[YOUR_LINKEDIN_URL]" target="_blank" class="flex items-center space-x-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-600 transition duration-300">
+                    <!-- Placeholder LinkedIn Icon -->
+                    <svg class="icon-svg w-6 h-6 text-white" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span class="text-white font-semibold">LinkedIn</span>
+                </a>
+
+                <!-- Email Link -->
+                <a href="mailto:[YOUR_EMAIL_ADDRESS]" class="flex items-center space-x-2 px-6 py-3 rounded-lg bg-green-700 hover:bg-green-600 transition duration-300">
+                    <!-- Placeholder Mail Icon -->
+                    <svg class="icon-svg w-6 h-6 text-white" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="text-white font-semibold">Email</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            <p>&copy; 2024 [Madhav Pandya]. Encrypted and delivered via HTML/CSS/JS.</p>
+        </div>
+    </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
